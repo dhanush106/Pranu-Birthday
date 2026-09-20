@@ -5,18 +5,18 @@ import confetti from "canvas-confetti";
 const sequences = [
   {
     text: "22-09-2026",
-    duration: 120,
+    duration: 100,
     pause: 1800,
   },
   {
-    text: "The best day of the year...",
+    text: "The Best Day Of The Year...",
     duration: 90,
-    pause: 2200,
+    pause: 1200,
   },
   {
     text: "Happy Birthday, My Dear Cute Rabbit 🐰❤️",
     duration: 80,
-    pause: 5000,
+    pause: 2200,
   },
 ];
 
@@ -56,13 +56,13 @@ export default function BirthdayIntro({ onComplete }) {
           setSequenceIndex((prev) => prev + 1);
           setPhase("typing");
         }
-      }, 1200);
+      }, 800);
     }
 
     if (phase === "celebrating") {
       timer = setTimeout(() => {
         onComplete();
-      }, 6500);
+      }, 7500);
     }
 
     return () => clearTimeout(timer);
@@ -119,7 +119,7 @@ export default function BirthdayIntro({ onComplete }) {
     // Big center burst
     setTimeout(() => {
       confetti({
-        particleCount: 180,
+        particleCount: 280,
         spread: 120,
         startVelocity: 45,
         origin: {
@@ -133,8 +133,8 @@ export default function BirthdayIntro({ onComplete }) {
     // Second burst
     setTimeout(() => {
       confetti({
-        particleCount: 150,
-        spread: 100,
+        particleCount: 350,
+        spread: 200,
         startVelocity: 40,
         origin: {
           x: 0.5,
@@ -146,7 +146,7 @@ export default function BirthdayIntro({ onComplete }) {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black text-white flex items-center justify-center">
+    <div className="relative text-regular min-h-screen overflow-hidden bg-black text-white flex items-center justify-center">
       {/* Subtle background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,100,160,0.08),transparent_45%)]" />
 
@@ -155,7 +155,7 @@ export default function BirthdayIntro({ onComplete }) {
         {Array.from({ length: 80 }).map((_, i) => (
           <span
             key={i}
-            className="absolute h-[2px] w-[2px] rounded-full bg-white"
+            className="absolute h-[5px] w-[5px] rounded-full bg-pink-400 animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -209,6 +209,7 @@ export default function BirthdayIntro({ onComplete }) {
               font-light
               tracking-wide
               leading-tight
+              main
             "
           >
             {displayText}
@@ -234,7 +235,7 @@ export default function BirthdayIntro({ onComplete }) {
                 delay: 0.8,
                 duration: 1,
               }}
-              className="mt-6 text-sm md:text-lg tracking-[0.3em] uppercase text-white/60"
+              className="mt-6 secondary text-sm md:text-lg tracking-[0.3em] uppercase text-white/60"
             >
               Today is all about you ✨
             </motion.div>
