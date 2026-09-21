@@ -1,10 +1,11 @@
 import React from 'react'
 import DomeGallery from '../components/DomeGallery';
-
+import Hero from "./Hero";
 
 const Home = () => {
   return (
     <div className="">
+        <Hero />
         <div style={{ width: '100vw', height: '100vh' }}>
             <DomeGallery
                 fit={0.8}
