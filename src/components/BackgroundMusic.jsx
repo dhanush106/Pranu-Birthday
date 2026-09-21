@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-import birthdaySong from "../assets/music/Guche Gulabi.mp3";
+import birthdaySong from "../../public/music/Guche Gulabi.mp3";
 
 const BackgroundMusic = () => {
   const audioRef = useRef(null);
